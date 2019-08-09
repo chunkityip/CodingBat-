@@ -70,3 +70,58 @@ def alarm_clock(day, vacation):
   if 1 <= day <= 5:
     return '10:00'
   return 'off'
+-----------------------------------------------------------------------------------------------------------------------------------------
+love6 
+#The number 6 is a truly great number. 
+#Given two int values, a and b, return True if either one is 6. Or if their sum or difference is 6. 
+#Note: the function abs(num) computes the absolute value of a number.
+
+def love6(a, b):
+  return (a==6 or b==6 or a+b ==6 or abs(a-b)==6)
+-----------------------------------------------------------------------------------------------------------------------------------------
+in1to10 
+#Given a number n, return True if n is in the range 1..10, inclusive. 
+#Unless outside_mode is True, in which case return True if the number is less or equal to 1, or greater or equal to 10.
+
+def in1to10(n, outside_mode):
+  return 1>=n or n>=10 if outside_mode else 1<=n<=10
+-----------------------------------------------------------------------------------------------------------------------------------------
+near_ten 
+#Given a non-negative number "num", return True if num is within 2 of a multiple of 10. 
+
+def near_ten(num):
+  return num % 10 in [0,1,2,8,9,10]
+----------------------------------------------------------------------------------------------------------------------------------------
+sum67 
+#Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and extending to the next 7 (every 6 will be followed by at least one 7). 
+#Return 0 for no numbers.
+
+def sum67(nums):
+  ignore = False
+  count =0
+
+  for i in range(len(nums)):
+    if nums[i] ==6 :
+        ignore = True
+    
+    if not ignore:
+      count+= nums[i]
+        
+    if nums[i] ==7 and ignore:
+      ignore = False
+      
+    
+  return count
+-----------------------------------------------------------------------------------------------------------------------------------------
+has22 
+#Given an array of ints, return True if the array contains a 2 next to a 2 somewhere.
+
+def has22(nums):
+    for x in range(len(nums)-1):
+      if nums[x] ==2 and nums[x+1] ==2:
+        return True
+    return False
+----------------------------------------------------------------------------------------------------------------------------------------
+
+
+  
